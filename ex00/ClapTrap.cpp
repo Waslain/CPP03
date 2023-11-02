@@ -6,11 +6,23 @@
 /*   By: fduzant <fduzant@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 17:28:32 by fduzant           #+#    #+#             */
-/*   Updated: 2023/10/28 18:31:18 by fduzant          ###   ########.fr       */
+/*   Updated: 2023/11/02 14:18:20 by fduzant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+//Constructors and destructors
+ClapTrap::ClapTrap() : _name("default"), _hit_points(10), _energy_points(10), _attack_damage(0)
+{
+	std::cout << "Default ClapTrap constructor" << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &copy)
+{
+	std::cout << "Copy Constructor called" << std::endl;
+	*this = copy;
+}
 
 ClapTrap::ClapTrap(const std::string name) : _name(name), _hit_points(10), _energy_points(10), _attack_damage(0)
 {
@@ -22,6 +34,18 @@ ClapTrap::~ClapTrap()
 	std::cout << "ClapTrap " << _name << " destroyed !" << std::endl;
 }
 
+//Operator overloads
+ClapTrap &ClapTrap::operator=(const ClapTrap &claptrap)
+{
+	std::cout << "Assignation operator called" << std::endl;
+	_name = claptrap._name;
+	_hit_points = claptrap._hit_points;
+	_energy_points = claptrap._energy_points;
+	_attack_damage = claptrap._attack_damage;
+	return (*this);
+}
+
+//Member functions
 void	ClapTrap::attack(const std::string& target)
 {
 	if (_energy_points <= 0)
