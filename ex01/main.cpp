@@ -6,7 +6,7 @@
 /*   By: fduzant <fduzant@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 13:38:35 by fduzant           #+#    #+#             */
-/*   Updated: 2023/11/02 15:03:20 by fduzant          ###   ########.fr       */
+/*   Updated: 2023/11/06 12:48:18 by fduzant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 int main()
 {
-	std::cout << "### TESTING CLAPTRAP ###\n" << std::endl;
+	std::cout << "****TESTING CLAPTRAP****\n" << std::endl;
 	ClapTrap a;
 	ClapTrap b("Cody");
 
@@ -33,7 +33,7 @@ int main()
 		b.attack("Cody-clone");
 	b.beRepaired(3);
 
-	std::cout << "\n\n### TESTING SCAVTRAP ###\n" << std::endl;
+	std::cout << "\n\n****TESTING SCAVTRAP****\n" << std::endl;
 	ScavTrap c;
 	ScavTrap d("Savage");
 	std::cout << BWHT<< "\nTesting" << RESET << std::endl;
